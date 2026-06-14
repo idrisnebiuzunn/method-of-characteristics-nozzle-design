@@ -1,24 +1,24 @@
 # Method of Characteristics Nozzle Design
 
-This repository contains a MATLAB-based implementation of the Method of Characteristics (MOC) for supersonic nozzle contour generation.
+This repository contains a MATLAB-based implementation of the classical Method of Characteristics (MOC) for supersonic nozzle contour generation.
 
-The project focuses on the construction of a supersonic flow field using characteristic relations, Prandtl-Meyer expansion theory, inverse Mach-number calculation, and point-by-point nozzle contour generation.
+The project focuses on constructing a two-dimensional planar supersonic flow field using characteristic relations, Prandtl-Meyer expansion theory, inverse Mach-number calculation, and point-by-point nozzle wall generation.
 
 ## Overview
 
-The Method of Characteristics is used to solve two-dimensional supersonic flow problems by transforming the governing hyperbolic partial differential equations into algebraic and geometric relations along characteristic lines.
+The Method of Characteristics is a standard approach for solving two-dimensional supersonic flow problems by transforming the governing hyperbolic partial differential equations into algebraic and geometric relations along characteristic lines.
 
-In this project, MOC is applied to the design of the divergent section of a supersonic convergent-divergent nozzle. The main goal is to generate the characteristic grid and obtain the corresponding nozzle wall contour using MATLAB.
+In this project, MOC is applied to the design of the divergent section of a supersonic convergent-divergent nozzle. The main objective is to generate the characteristic grid and obtain the corresponding minimum-length nozzle wall contour in MATLAB.
 
-The theoretical background of the method is documented separately in the `docs` folder.
+This implementation is based on the classical planar formulation of MOC for elementary supersonic nozzle design.
 
 ## Theory Background
 
 A detailed theory and formulation document is included in this repository:
 
-[Method of Characteristics: Theory and Formulation](docs/moc_theory_and_formulation.pdf.pdf)
+[Method of Characteristics: Theory and Formulation](docs/moc_theory_and_formulation.pdf)
 
-This document explains the main assumptions, governing equations, characteristic directions, compatibility relations, Prandtl-Meyer function, and the unit processes used in classical MOC nozzle design, including:
+This document summarizes the main assumptions, governing equations, characteristic directions, compatibility relations, Prandtl-Meyer function, and the unit processes used in classical MOC nozzle design, including:
 
 - Interior-point process
 - Centerline-point process
@@ -32,7 +32,7 @@ The main script of the project is:
 
 ```text
 src/Main_MOC.m
-````
+```
 
 To run the project, open MATLAB, navigate to the repository folder, and run:
 
@@ -40,7 +40,7 @@ To run the project, open MATLAB, navigate to the repository folder, and run:
 run('src/Main_MOC.m')
 ```
 
-or open `Main_MOC.m` directly from the `src` folder and run it.
+Alternatively, open `Main_MOC.m` directly from the `src` folder and run it inside MATLAB.
 
 ## Repository Structure
 
@@ -69,30 +69,32 @@ method-of-characteristics-nozzle-design/
 
 ## Methodology
 
-The MATLAB implementation includes the following main computational steps:
+The MATLAB implementation follows these main steps:
 
 1. Define the initial flow and geometric conditions.
-2. Compute the Prandtl-Meyer function and inverse Mach number.
-3. Calculate Mach angle and characteristic directions.
-4. Generate interior points using intersecting characteristic lines.
-5. Apply the centerline symmetry condition.
-6. Compute wall points using characteristic relations and wall tangency.
-7. Construct the nozzle wall contour from the generated MOC points.
+2. Compute the Prandtl-Meyer angle and inverse Mach number.
+3. Evaluate Mach angle and characteristic directions.
+4. Generate centerline and interior points from intersecting characteristic lines.
+5. Apply the wall-point design process using compatibility relations and wall tangency.
+6. Construct the nozzle wall contour from the resulting MOC point distribution.
+
+## Notes on the Formulation
+
+This repository uses the classical two-dimensional planar MOC formulation. The generated contour therefore represents a planar minimum-length nozzle solution. If the contour is to be adapted to an axisymmetric nozzle, an additional geometric conversion step is required.
 
 ## Tools Used
 
-* MATLAB
-* Computational Aerodynamics
-* Compressible Flow Theory
-* Numerical Methods
+- MATLAB
+- Compressible Flow Theory
+- Computational Aerodynamics
+- Numerical Methods
 
 ## Project Motivation
 
-This project was developed to strengthen the connection between compressible flow theory and numerical implementation. It helped me understand how the Method of Characteristics can be used to construct supersonic flow fields and nozzle contours from governing aerodynamic relations.
+This project was developed to strengthen the connection between compressible flow theory and numerical implementation. It helped me better understand how the Method of Characteristics can be used to construct supersonic flow fields and nozzle contours directly from aerodynamic governing relations.
 
-The work was initially introduced during my summer internship at SPACROL and was later improved through the Computational Aerodynamics course, where the mathematical derivations and governing relations were studied in more detail.
+The work was first introduced during my summer internship at SPACROL and was later improved through the Computational Aerodynamics course, where the mathematical derivations and governing relations were studied in more detail.
 
-## Notes
+## Disclaimer
 
 This repository is intended as an academic and personal engineering portfolio project. The implementation is focused on learning, numerical understanding, and demonstrating the application of the Method of Characteristics to supersonic nozzle design.
-
