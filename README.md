@@ -16,7 +16,7 @@ The theoretical background of the method is documented separately in the `docs` 
 
 A detailed theory and formulation document is included in this repository:
 
-[Method of Characteristics: Theory and Formulation](docs/moc_theory_and_formulation.pdf)
+[Method of Characteristics: Theory and Formulation](docs/moc_theory_and_formulation.pdf.pdf)
 
 This document explains the main assumptions, governing equations, characteristic directions, compatibility relations, Prandtl-Meyer function, and the unit processes used in classical MOC nozzle design, including:
 
